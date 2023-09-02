@@ -13,29 +13,27 @@
 <link th:href="@{/css/login/bootstrap.min.css}" rel="stylesheet" id="bootstrap-css">
 <script th:src="@{/js/bootstrap.min.js}"></script>
 <script th:src="@{/js/jquery-1.11.1.min.js}"></script>
-
-
 <title>ログイン</title>
 </head>
 <body class="bg-light">
  <div class="container">
+	 <form method="post" th:action="@{/login}" class="form-login">
         <div class="card card-container">
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
             <img id="profile-img" class="profile-img-card" th:src="@{/images/images.jpeg}" />
             <p id="profile-name" class="profile-name-card"></p>
             <form class="form-signin">
                 <span id="reauth-email" class="reauth-email"></span>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" ><!--required autofocus-->
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password"><!-- required-->
                 <div id="remember" class="checkbox">
-                    <label>
-                        <input type="checkbox" value="remember-me"> Remember me
-                    </label>
                 </div>
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
             </form><!-- /form -->
+            <br>
 	<a th:href="@{/user/signup}">新規登録はこちら</a>
 	</div>
+	 </form>
 	</div>
 </body>
 </html>

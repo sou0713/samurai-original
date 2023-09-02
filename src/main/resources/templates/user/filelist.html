@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<h1>File List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>File Name</th>
+                <th>File Type</th>
+                <!-- 他のファイル情報のヘッダーを追加 -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="file : ${files}">
+                <td th:text="${file.id}">1</td>
+                <td th:text="${file.fileName}">example.txt</td>
+                <td th:text="${file.fileType}">text/plain</td>
+                <td><video controls th:src="${name}"></video></tr>
+                <!-- 他のファイル情報を表示 -->
+            </tr>
+        </tbody>
+    </table>
+    <!--<div class= “video” th:each="name : ${nameList}">
+  	<video controls th:src="${name}"></video>
+	</div>
+    <img id="profile-img" class="profile-img-card" th:src="@{/images/images.jpeg}" />-->
+
+
+</body>
+</html>
